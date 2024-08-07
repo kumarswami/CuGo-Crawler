@@ -1,30 +1,8 @@
 # CuGo-Crawler
-Create 2BLDC_ZS-X11H_1Servo_Pico
-ZS-X11H ESC to Raspberry Pi Pico:
+![image](https://github.com/user-attachments/assets/9f4ed766-a1b4-4fa8-9f68-d67a79baf0e4)
+![image](https://github.com/user-attachments/assets/5f3ec241-72a2-4db7-893a-b58786510e4b)
+![image](https://github.com/user-attachments/assets/717eac68-6ae3-4ac8-bfa2-d41911bb24cc)
 
-Left Motor Signal Wire (Yellow) → GPIO 10 (Pico pin 14)
-Right Motor Signal Wire (Yellow) → GPIO 11 (Pico pin 16)
-Ground Wire (Black) → GND (Pico pin 38)
-Power Wire (Red) → 5V or appropriate power source (Pico pin 36 or an external power supply)
-Raspberry Pi Pico Connections for Control:
-
-Receiver Pin A → GPIO 0 (Pico pin 1)
-Receiver Pin B → GPIO 1 (Pico pin 2)
-Receiver Pin C → GPIO 2 (Pico pin 4)
-Receiver Pin D → GPIO 3 (Pico pin 5)
-Receiver Pin E → GPIO 4 (Pico pin 6)
-Receiver Pin F → GPIO 5 (Pico pin 9)
-Receiver Pin G → GPIO 6 (Pico pin 10)
-Receiver Pin H → GPIO 7 (Pico pin 11)
-Servo Signal → GPIO 9 (Pico pin 12)
-Control Pins for Direction, Brake, and Stop:
-
-Left Motor Direction Control Wire → GPIO 12 (Pico pin 17)
-Left Motor Brake Control Wire → GPIO 13 (Pico pin 18)
-Left Motor Stop Control Wire → GPIO 14 (Pico pin 19)
-Right Motor Direction Control Wire → GPIO 15 (Pico pin 20)
-Right Motor Brake Control Wire → GPIO 16 (Pico pin 21)
-Right Motor Stop Control Wire → GPIO 17 (Pico pin 22)
 
 ![image](https://github.com/user-attachments/assets/4aa27b49-58f3-47f6-b937-e8891eb3cba5)
 
