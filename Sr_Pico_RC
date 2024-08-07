@@ -1,0 +1,60 @@
+#include <Servo.h>
+
+const int MR8_PIN[8] = {0, 1, 2, 3, 4, 5, 6, 7}; // Connect receiver pins A to H to GPIO 0 to GPIO 7
+const int servoPin = 9;  // Connect the servo signal wire to GPIO 9 (or any other PWM-capable pin)
+
+volatile unsigned long startPulse[8];
+volatile int getPulse[8];
+Servo myServo;
+
+void channelChangeInterrupt(int channel) {
+  unsigned long nowPulse = micros();
+  if (digitalRead(MR8_PIN[channel]) == HIGH) {
+    startPulse[channel] = nowPulse;
+  } else {
+    getPulse[channel] = nowPulse - startPulse[channel];
+  }
+}
+
+void chAChangeInterrupt() { channelChangeInterrupt(0); }
+void chBChangeInterrupt() { channelChangeInterrupt(1); }
+void chCChangeInterrupt() { channelChangeInterrupt(2); }
+void chDChangeInterrupt() { channelChangeInterrupt(3); }
+void chEChangeInterrupt() { channelChangeInterrupt(4); }
+void chFChangeInterrupt() { channelChangeInterrupt(5); }
+void chGChangeInterrupt() { channelChangeInterrupt(6); }
+void chHChangeInterrupt() { channelChangeInterrupt(7); }
+
+void setup() {
+  Serial.begin(115200);
+  for (int i = 0; i < 8; i++) {
+    pinMode(MR8_PIN[i], INPUT);
+  }
+
+  attachInterrupt(digitalPinToInterrupt(MR8_PIN[0]), chAChangeInterrupt, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(MR8_PIN[1]), chBChangeInterrupt, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(MR8_PIN[2]), chCChangeInterrupt, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(MR8_PIN[3]), chDChangeInterrupt, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(MR8_PIN[4]), chEChangeInterrupt, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(MR8_PIN[5]), chFChangeInterrupt, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(MR8_PIN[6]), chGChangeInterrupt, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(MR8_PIN[7]), chHChangeInterrupt, CHANGE);
+
+  myServo.attach(servoPin);
+}
+
+void loop() {
+  for (int i = 0; i < 8; i++) {
+    Serial.printf("getPulse[%d] CH %c:%d\n", i, 'A' + i, getPulse[i]);
+  }
+
+  // Convert the pulse width from channel A to a servo position
+  int pulseWidth = getPulse[0]; // Pulse width in microseconds from channel A
+  int servoPos = map(pulseWidth, 1000, 2000, 0, 180); // Assuming the pulse width is between 1000 and 2000 microseconds
+
+  myServo.write(servoPos); // Set the servo position
+
+  Serial.printf("Servo Position: %d\n", servoPos);
+  Serial.println(" ");
+  delay(50);
+}
