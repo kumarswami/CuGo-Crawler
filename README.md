@@ -26,6 +26,45 @@ Right Motor Direction Control Wire → GPIO 15 (Pico pin 20)
 Right Motor Brake Control Wire → GPIO 16 (Pico pin 21)
 Right Motor Stop Control Wire → GPIO 17 (Pico pin 22)
 
+
+
+******************Pin Diagram***********************
+    +---------------------+
+    | Raspberry Pi Pico   |
+    |                     |
+    |    3.3V              |
+    |    GND              |
+    |                     |
+    |    GPIO 0 (RX A)    |--- Receiver Pin A
+    |    GPIO 1 (RX B)    |--- Receiver Pin B
+    |    GPIO 2 (RX C)    |--- Receiver Pin C
+    |    GPIO 3 (RX D)    |--- Receiver Pin D
+    |    GPIO 4 (RX E)    |--- Receiver Pin E
+    |    GPIO 5 (RX F)    |--- Receiver Pin F
+    |    GPIO 6 (RX G)    |--- Receiver Pin G
+    |    GPIO 7 (RX H)    |--- Receiver Pin H
+    |    GPIO 9 (Servo)   |--- Servo Signal Wire
+    |    GPIO 10 (ESC L)  |--- Left ESC Signal Wire
+    |    GPIO 11 (ESC R)  |--- Right ESC Signal Wire
+    |    GPIO 12 (Left Dir)|--- Left Motor Direction Control
+    |    GPIO 13 (Left Brake)|--- Left Motor Brake Control
+    |    GPIO 14 (Left Stop)|--- Left Motor Stop Control
+    |    GPIO 15 (Right Dir)|--- Right Motor Direction Control
+    |    GPIO 16 (Right Brake)|--- Right Motor Brake Control
+    |    GPIO 17 (Right Stop)|--- Right Motor Stop Control
+    |                     |
+    |    GND              |
+    |    5V / Power       |
+    +---------------------+
+
+
+
+
+
+
+
+
+
 ***********Explanation:*********
 
 Channel B (Speed Control): Adjusts the speed of both left and right motors.
