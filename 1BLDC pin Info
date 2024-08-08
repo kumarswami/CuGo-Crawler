@@ -1,0 +1,34 @@
+Wiring Connections
+Receiver Pins (A to H):
+
+Pin A: Connect to GPIO 0 (Pico pin 1)
+Pin B: Connect to GPIO 1 (Pico pin 2)
+Pin C: Connect to GPIO 2 (Pico pin 4)
+Pin D: Connect to GPIO 3 (Pico pin 5)
+Pin E: Connect to GPIO 4 (Pico pin 6)
+Pin F: Connect to GPIO 5 (Pico pin 9)
+Pin G: Connect to GPIO 6 (Pico pin 10)
+Pin H: Connect to GPIO 7 (Pico pin 11)
+Servo Motor:
+
+Signal Wire: Connect to GPIO 9 (Pico pin 12)
+Power Wire: Connect to 5V or appropriate power source
+Ground Wire: Connect to GND
+Left BLDC Motor ESC:
+
+Signal Wire: Connect to GPIO 10 (Pico pin 14)
+Power Wire: Connect to 5V or appropriate power source
+Ground Wire: Connect to GND
+Right BLDC Motor ESC:
+
+Signal Wire: Connect to GPIO 11 (Pico pin 16)
+Power Wire: Connect to 5V or appropriate power source
+Ground Wire: Connect to GND
+Motor Control Pins:
+
+Left Motor Direction Control: Connect to GPIO 12 (Pico pin 17)
+Left Motor Brake Control: Connect to GPIO 13 (Pico pin 18)
+Left Motor Stop Control: Connect to GPIO 14 (Pico pin 19)
+Right Motor Direction Control: Connect to GPIO 15 (Pico pin 20)
+Right Motor Brake Control: Connect to GPIO 16 (Pico pin 21)
+Right Motor Stop Control: Connect to GPIO 17 (Pico pin 22)
